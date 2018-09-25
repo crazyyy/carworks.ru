@@ -41,7 +41,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="header-logo col-xl-12 col-lg-12">
+        <div class="header-logo col-xl-12 col-lg-12 col-md-12 col-sm-12">
           <?php if ( !is_front_page() && !is_home() ){ ?>
             <a href="<?php echo home_url(); ?>">
           <?php } ?>
@@ -51,12 +51,12 @@
           <?php } ?>
         </div><!-- /logo -->
 
-        <div class="header-buttons col-xl-3 col-lg-3 offset-xl-5 offset-lg-5">
+        <div class="header-buttons col-xl-3 col-lg-3 col-md-4 col-sm-3 offset-xl-5 offset-lg-5 offset-md-0 offset-sm-0">
           <a href="#" class="header-buttons--order">Online заявка</a>
         </div>
         <!-- /.header-buttons col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 -->
 
-        <div class="header-contacts col-xl-4 col-lg-4">
+        <div class="header-contacts col-xl-4 col-lg-4 col-md-8 col-sm-9">
           <a href="tel:84993911844">8 (499) 391-18-44</a>
           <a href="tel:89296386854">8 (929) 638-68-54</a>
           <p>Время работы: ПН-ВС 10.00 до 21.00</p>

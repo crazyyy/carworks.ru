@@ -26,6 +26,11 @@ body {
   line-height: $base-line-height;
 
   -webkit-font-smoothing: antialiased;
+  &.modal-opened {
+    overflow: hidden;
+
+    padding-right: 17px;
+  }
 }
 h1,
 h2,
@@ -98,10 +103,11 @@ header {
 }
 .header-logo {
   display: block;
-  text-align: right;
 
   margin-bottom: 10px;
   padding-top: 10px;
+
+  text-align: right;
   img {
     max-width: 100%;
   }
@@ -125,8 +131,7 @@ header {
 .header-nav {
   border-top: 2px solid #848484;
   border-bottom: 2px solid #848484;
-  background-image: url(../img/bg-header-nav.jpg);
-  background-repeat: repeat-x;
+  @include linear-gradient(180deg, #e3e4e7 0%, #fdfdfd 100%, #e3e4e7 0%);
   ul {
     display: flex;
     align-content: flex-start;
@@ -145,8 +150,8 @@ header {
     }
     &:hover {
       a {
-        background-color: lighten($red, 10%);
         color: #fff;
+        background-color: lighten($red, 10%);
       }
     }
   }
@@ -162,20 +167,26 @@ header {
   }
 }
 .header-buttons {
-  text-align: right;
   position: relative;
+
   padding-top: 80px;
+
+  text-align: right;
   a {
-    font-size: 20px;
-    line-height: 2;
-    background-color: #3c3a3c;
     display: inline-block;
+    text-align: center;
+
+    padding: 4px 16px;
+
+    color: #fff;
     border: 3px solid #8f8f90;
     border-radius: 20px;
-    padding: 4px 16px;
-    color: #fff;
-    font-weight: normal;
+    background-color: #3c3a3c;
     box-shadow: $base-box-shadow;
+
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 2;
     &:hover {
       background-color: darken(#3c3a3c, 10%);
     }
@@ -194,11 +205,14 @@ section {
   padding: 0 0 $footer;
 }
 article {
+  @extend .clearfix;
   h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 20px;
+
     color: #336699;
+
     font-weight: bold;
     line-height: 1.4;
-    margin-bottom: 20px;
   }
   h4,h5,h6 {
     font-weight: normal;
@@ -227,23 +241,187 @@ article {
   a {
     color: $red;
   }
-  @extend .clearfix;
+  table {
+    margin-bottom: 18px;
+  }
 }
 .looper {
+  margin-bottom: 20px;
+
+  color: #336699;
+
   @extend .clearfix;
+  h2 {
+    margin-bottom: 16px;
+
+  color: #336699;
+
+    font-size: 22px;
+  }
 }
+.ctitle {
+  margin-bottom: 20px;
 
+  font-size: 26px;
 
+}
+.pagination {
+  margin-bottom: 20px;
+
+  text-align: center;
+  span, a {
+    display: inline-block;
+
+    margin: 0 10px;
+  }
+}
+.widget {
+  h6 {
+    margin-bottom: 10px;
+    padding: 0 0 0 20px;
+
+    color: $red;
+
+    font-size: 20px;
+    font-weight: bold;
+  }
+  ul {
+    li {
+      border-bottom: 2px solid #fff;
+
+      @include linear-gradient(45deg, #e3e4e7 0%, #fdfdfd 100%);
+
+      &.current-menu-item {
+        a {
+          border-left: 5px solid $red;
+        }
+      }
+      &:hover {
+        @include linear-gradient(-45deg, #e3e4e7 0%, #fdfdfd 100%);
+      }
+    }
+    a {
+      display: block;
+
+      padding: 5px 5px 5px 20px;
+
+      color: #000;
+
+      font-size: 18px;
+    }
+  }
+}
+.page-id-5 {
+  article {
+    p {
+
+    }
+  }
+}
+.modal-bg {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+  align-content: center;
+  align-items: center;
+  // display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  background-color: rgba(71, 125, 202, .6);
+  &.modal-bg--opened {
+    display: flex;
+  }
+  .modal-container {
+    width: 30%;
+    min-width: 320px;
+    padding: 0;
+
+    border: 15px solid #fff;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: $base-box-shadow;
+    form {
+      label,
+      p,
+      input,
+      textarea {
+        margin-bottom: 10px;
+
+        font-weight: normal;
+        line-height: 1.8;
+      }
+      p {
+        margin: 0;
+      }
+      .productname {
+        textarea {
+          height: 80px;
+        }
+      }
+      .your-message {
+        textarea {
+          height: 120px;
+        }
+      }
+    }
+  }
+  .modal-close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+
+    cursor: pointer;
+    transition: $base-transition;
+
+    color: #fff;
+
+    font-size: 60px;
+    &:hover {
+      color: lighten($blue, 25%);
+    }
+  }
+
+}
+.call-me-hidden {
+  display: none;
+}
 footer {
   height: $footer;
   margin: $footer_margin auto 0;
-  color: #fff;
   padding-top: 16px;
 
+  color: #fff;
   background-image: url(../img/bg-footer.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  a {
+    text-decoration: underline;
+
+    color: #fff;
+  }
+  .footer-navi-full {
+    ul {
+      display: inline-flex;
+      align-content: flex-start;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    li {
+      display: inline-block;
+
+      width: 49.5%;
+    }
+  }
 }
 
 

@@ -1,6 +1,13 @@
 // col-xl-# ( ≥1200px)
 @include media-breakpoint-down(xl) {
-
+  section {
+    padding-bottom: 0;
+  }
+  footer {
+    height: auto;
+    margin-top: 0;
+    padding-bottom: 30px;
+  }
 }
 // col-lg-# ( ≥992px)
 @include media-breakpoint-down(lg) {
@@ -8,10 +15,40 @@
 }
 // col-md-# ( ≥768px)
 @include media-breakpoint-down(md) {
+  .container {
+    max-width: 100%;
+  }
 
 }
 // col-sm-# ( ≥576px)
 @include media-breakpoint-down(sm) {
+  header {
+    height: auto;
+  }
+  .header-nav  {
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: center;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  footer {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  .footer-navi-top {
+    margin-bottom: 20px;
+  }
+  footer .footer-navi-full li {
+    width: 100%;
+  }
 
 }
 // col-# ( <575.5px)
