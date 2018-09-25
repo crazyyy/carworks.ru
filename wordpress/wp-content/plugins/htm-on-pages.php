@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: .htm on PAGES
+Plugin Name: .html on PAGES
 Plugin URI: http://www.introsites.co.uk/33~html-wordpress-permalink-on-pages-plugin.htm
-Description: Adds .htm to pages.
+Description: Adds .html to pages.
 Author: IntroSites
 Version: 1.1
 Author URI: http://www.introsites.co.uk/
@@ -15,8 +15,8 @@ register_deactivation_hook(__FILE__, 'deactive');
 
 function html_page_permalink() {
 	global $wp_rewrite;
- if ( !strpos($wp_rewrite->get_page_permastruct(), '.htm')){
-		$wp_rewrite->page_structure = $wp_rewrite->page_structure . '.htm';
+ if ( !strpos($wp_rewrite->get_page_permastruct(), '.html')){
+		$wp_rewrite->page_structure = $wp_rewrite->page_structure . '.html';
  }
 }
 add_filter('user_trailingslashit', 'no_page_slash',66,2);
@@ -31,14 +31,14 @@ function no_page_slash($string, $type){
 
 function active() {
 	global $wp_rewrite;
-	if ( !strpos($wp_rewrite->get_page_permastruct(), '.htm')){
-		$wp_rewrite->page_structure = $wp_rewrite->page_structure . '.htm';
+	if ( !strpos($wp_rewrite->get_page_permastruct(), '.html')){
+		$wp_rewrite->page_structure = $wp_rewrite->page_structure . '.html';
  }
   $wp_rewrite->flush_rules();
-}	
+}
 	function deactive() {
 		global $wp_rewrite;
-		$wp_rewrite->page_structure = str_replace(".htm","",$wp_rewrite->page_structure);
+		$wp_rewrite->page_structure = str_replace(".html","",$wp_rewrite->page_structure);
 		$wp_rewrite->flush_rules();
 	}
 ?>

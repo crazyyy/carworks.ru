@@ -1,15 +1,22 @@
 <?php get_header(); ?>
+  <div class="container">
+    <div class="row">
 
-  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <?php get_sidebar(); ?>
 
-      <h1 class="page-title inner-title"><?php the_title(); ?></h1>
-      <?php the_content(); ?>
-      <?php edit_post_link(); ?>
+      <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('col-xl-9 col-lg-9'); ?>>
 
-    </article>
-  <?php endwhile; endif; ?>
+          <h1 class="page-title inner-title"><?php the_title(); ?></h1>
+          <?php the_content(); ?>
+          <?php edit_post_link(); ?>
 
-  <?php get_sidebar(); ?>
+        </article>
+      <?php endwhile; endif; ?>
+
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
 
 <?php get_footer(); ?>
