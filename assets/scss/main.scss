@@ -237,6 +237,8 @@ article {
 footer {
   height: $footer;
   margin: $footer_margin auto 0;
+  color: #fff;
+  padding-top: 16px;
 
   background-image: url(../img/bg-footer.jpg);
   background-repeat: no-repeat;

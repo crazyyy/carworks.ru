@@ -2723,6 +2723,8 @@ article a {
 footer {
   height: 180px;
   margin: -180px auto 0;
+  color: #fff;
+  padding-top: 16px;
   background-image: url(../img/bg-footer.jpg);
   background-repeat: no-repeat;
   background-position: center;
