@@ -1,0 +1,70 @@
+<!-- Kan_title -->
+       Контакты<!-- Kan_title -->
+<!-- Kan_content -->
+<p class="СЃС‚РёР»СЊ6" align="left">Телефон:</p>      
+    <p style="margin-bottom: 0cm">+7(499) 755-90-48</p><p style="margin-bottom: 0cm">+7(915) 005-67-40</p>
+<p style="margin-bottom: 0cm">+7(916) 163-63-39</p>
+    <p class="СЃС‚РёР»СЊ6" align="left">Электронная почта:</p>
+    <p align="left"><a href="mailto:glass-masters@mail.ru" class="стиль1" title="[GMCP] Compose a new mail to glass-masters@mail.ru" onclick="window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=glass-masters@mail.ru','Compose new message','width=640,height=480');return false" rel="noreferrer">glass-masters@mail.ru</a></p>
+    <p class="стиль1" align="left"><span class="СЃС‚РёР»СЊ6">Адрес:</span></p>
+    <p class="стиль1" align="left">г Москва, ул. Большая Черемушкинская, д.1  (ТЦ РИО - на территории паркинга)</p>
+
+
+<p style="margin-bottom: 0cm"><font>Ближайшие станции
+метро:</font></p><p style="margin-bottom: 0cm"><font><img alt="" src="/two.png" border="0" height="40px" width="40px">Ленинский проспект (оранжевая
+ветка) , <img alt="" src="/two.png" border="0" height="40px" width="40px">Академическая (</font>оранжевая<font>&nbsp;ветка),
+<img alt="" src="/one.png" border="0" height="40px" width="40px">Тульская (серая ветка)</font></p>
+	
+	
+
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту  (начало) -->
+<script src="http://api-maps.yandex.ru/1.1/?key=AJQi504BAAAAfqbaFgIAd-8mkANwAPy_mf85WyfxcD22yc8AAAAAAAAAAACgEYaxUDcGPKQjNdiyjyQ3b6RTrw==&amp;modules=pmap&amp;wizard=constructor" type="text/javascript"></script>
+<script type="text/javascript">
+    YMaps.jQuery(window).load(function () {
+        var map = new YMaps.Map(YMaps.jQuery("#YMapsID-156")[0]);
+        map.setCenter(new YMaps.GeoPoint(37.60316,55.689856), 15, YMaps.MapType.MAP);
+        map.addControl(new YMaps.Zoom());
+        map.addControl(new YMaps.ToolBar());
+        YMaps.MapType.PMAP.getName = function () { return "Народная"; };
+        map.addControl(new YMaps.TypeControl([
+            YMaps.MapType.MAP,
+            YMaps.MapType.SATELLITE,
+            YMaps.MapType.HYBRID,
+            YMaps.MapType.PMAP
+        ], [0, 1, 2, 3]));
+
+        YMaps.Styles.add("constructor#pmlbmPlacemark", {
+            iconStyle : {
+                href : "http://api-maps.yandex.ru/i/0.3/placemarks/pmlbm.png",
+                size : new YMaps.Point(28,29),
+                offset: new YMaps.Point(-8,-27)
+            }
+        });
+
+       map.addOverlay(createObject("Placemark", new YMaps.GeoPoint(37.60213,55.68942), "constructor#pmlbmPlacemark", ""));
+        
+        function createObject (type, point, style, description) {
+            var allowObjects = ["Placemark", "Polyline", "Polygon"],
+                index = YMaps.jQuery.inArray( type, allowObjects),
+                constructor = allowObjects[(index == -1) ? 0 : index];
+                description = description || "";
+            
+            var object = new YMaps[constructor](point, {style: style, hasBalloon : !!description});
+            object.description = description;
+            
+            return object;
+        }
+    });
+</script>
+
+<div id="YMapsID-156" style="width:600px;height:450px"></div>
+<div style="width:600px;text-align:right;font-family:Arial"><a href="http://api.yandex.ru/maps/tools/constructor/" style="color:#1A3DC1">Создано с помощью инструментов Яндекс.Карт</a></div>
+<!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (конец) -->
+	<!-- Kan_content -->
+<!-- Kan_myinclude -->
+main<!-- Kan_myinclude -->
+<!-- Kan_description -->
+<!-- Kan_description -->
+<!-- Kan_keywords -->
+<!-- Kan_keywords -->
+<p style="text-align:center"><img src="/images/map1.jpg"  /><img src="/images/map1.jpg" /></p>
